@@ -32,30 +32,30 @@ exports.create = (req,res)=>{
 
 //retrieve & return user(s)
 exports.find = (req,res) =>{
+    res.send(['0']);
+    // if(req.query.id){
+    //     const id = req.query.id;
 
-    if(req.query.id){
-        const id = req.query.id;
-
-        Userdb.findById(id)
-        .then(data =>{
-            if(!data){
-                res.status(404).send({message: "Not found user with given id" + id})
-            }else{
-                res.send(data)
-            }
-        })
-        .catch(err =>{
-            res.status(500).send({message: "Error retrieving user with id" + id})
-        })
-    }else{
-        Userdb.find()
-        .then(user =>{
-            res.send(user)
-        })
-        .catch(err => {
-            res.status(500).send({message: err.message || "Haiya Error occured while retrieving user"})
-        })
-    }
+    //     Userdb.findById(id)
+    //     .then(data =>{
+    //         if(!data){
+    //             res.status(404).send({message: "Not found user with given id" + id})
+    //         }else{
+    //             res.send(data)
+    //         }
+    //     })
+    //     .catch(err =>{
+    //         res.status(500).send({message: "Error retrieving user with id" + id})
+    //     })
+    // }else{
+    //     Userdb.find()
+    //     .then(user =>{
+    //         res.send(user)
+    //     })
+    //     .catch(err => {
+    //         res.status(500).send({message: err.message || "Haiya Error occured while retrieving user"})
+    //     })
+    // }
 
 }
 

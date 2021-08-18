@@ -9,7 +9,7 @@ const connectDB = require("./server/database/connection");
 const app = express();
 
 dotenv.config({ path: "config.env" });
-const PORT = process.env.PORT || 443;
+const PORT = process.env.PORT || 80;
 console.log(PORT);
 //log request
 app.use(morgan("tiny"));
