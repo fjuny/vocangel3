@@ -9,8 +9,8 @@ const connectDB = require("./server/database/connection");
 const app = express();
 
 dotenv.config({ path: "config.env" });
-const PORT = process.env.PORT || 8080;
-
+const PORT = process.env.PORT || 443;
+console.log(PORT);
 //log request
 app.use(morgan("tiny"));
 
@@ -41,6 +41,13 @@ const services = require('./server/services/render');
 
 const controller = require('./server/controller/controller')
 
+
+//api
+app.post('/api/users', controller.create);
+app.get('/api/users', controller.find);
+app.put('/api/users/:id', controller.update);
+app.delete('/api/users/:id', controller.delete);
+
 app.get('/',services.homeRoutes);
 
 /**
@@ -62,11 +69,6 @@ app.get('/add-user',services.add_user);
 
 app.get('/update-user',services.update_user);
 
-//api
-app.post('/api/users', controller.create);
-app.get('/api/users', controller.find);
-app.put('/api/users/:id', controller.update);
-app.delete('/api/users/:id', controller.delete);
 
 
 app.listen(PORT, () => {

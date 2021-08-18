@@ -8,6 +8,7 @@ exports.homeRoutes = (req,res) => {
             res.render('index', {users: response.data});
         })
         .catch(err =>{
+            console.log(err);
             res.send(err);
         })
 }
