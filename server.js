@@ -37,8 +37,40 @@ app.get("/notes", (req, res) => {
     res.render("game");
   });
 //load routers
-app.use("/", require("./server/routes/router"));
+const services = require('./server/services/render');
+
+const controller = require('./server/controller/controller')
+
+app.get('/',services.homeRoutes);
+
+/**
+* @description Root Route
+* @method GET /
+*/
+
+/**
+* @description add users
+* @method GET /add-user
+*/
+
+app.get('/add-user',services.add_user);
+
+/**
+* @description update users
+* @method GET /update-user
+*/
+
+app.get('/update-user',services.update_user);
+
+//api
+app.post('/api/users', controller.create);
+app.get('/api/users', controller.find);
+app.put('/api/users/:id', controller.update);
+app.delete('/api/users/:id', controller.delete);
+
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+
