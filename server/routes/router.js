@@ -10,7 +10,6 @@ const controller = require('../controller/controller')
 * @method GET /
 */
 
-
 /**
 * @description add users
 * @method GET /add-user
