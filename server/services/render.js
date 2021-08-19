@@ -12,7 +12,7 @@ exports.homeRoutes = (req,res) => {
             res.send(err);
         })
 }
-
+//remove, isolate!!!
 exports.add_user = (req,res) =>{
     res.render('add_user');
 }
