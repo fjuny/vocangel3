@@ -8,7 +8,7 @@ const path = require("path");
 const connectDB = require("./server/database/connection");
 
 
-dotenv.config({ path: "config.env" });
+dotenv.config({ path: ".env" });
 
 const PORT = process.env.PORT || 3000;
 const mode = process.env.NODE_ENV;
