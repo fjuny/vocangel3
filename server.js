@@ -9,7 +9,7 @@ const connectDB = require("./server/database/connection");
 
 
 dotenv.config({ path: "config.env" });
-const connectionString = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@vocangel.623jr.mongodb.net/users?retryWrites=true&w=majority`
+const connectionString = "mongodb+srv://admin:admin@vocangel.623jr.mongodb.net/users?retryWrites=true&w=majority"
 
 const PORT = process.env.PORT || 3000;
 const mode = process.env.NODE_ENV;
