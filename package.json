@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "set NODE_ENV=development&& nodemon server.js",
-    "start-prod": "set NODE_ENV=production&& nodemon server.js"
+    "start": "node server.js",
+    "start-prod": "node server.js"
   },
   "keywords": [
     "crud",
